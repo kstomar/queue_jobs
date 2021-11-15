@@ -1,24 +1,63 @@
-# README
+# Queue Jobs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of contents
 
-Things you may want to cover:
+* Dependencies
+* Set up
+* Contributing
+* Branches
 
-* Ruby version
+## Dependencies
 
-* System dependencies
+* Ruby 3.0.1
+* Rails '~> 6.1.4'
+* SQL Database: PostgreSQL
+* Background Process: Sidekiq
 
-* Configuration
+## Set up.
 
-* Database creation
+* Install PostgreSQL
 
-* Database initialization
+    https://www.postgresql.org/docs/11/tutorial-install.html
+    https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
 
-* How to run the test suite
+    Follow the steps in any of above links.
 
-* Services (job queues, cache servers, search engines, etc.)
+* Install Elasticsearch
 
-* Deployment instructions
+    https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html
 
-* ...
+
+* Clone the repo.
+
+      git clone https://github.com/kstomar/queue_jobs.git
+
+* Install dependencies
+
+      cd queue_jobs
+      bundle install
+
+* Add database configuration and add your system user.
+```
+    cp database.example.yml database.yml
+```
+
+* Create database.
+
+```
+    rails db:create
+```
+* Migrate database.
+
+```
+    rails db:migrate
+```
+* Seed database.
+
+```
+    rails db:seed
+```
+
+* Postman collection - 
+  
+  https://www.getpostman.com/collections/43569c8ce732e5014914
